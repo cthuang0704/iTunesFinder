@@ -1,0 +1,53 @@
+.input-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 7rem;
+    background-color: #663399;
+}
+
+.input-container input{
+    border: none;
+    padding: 1rem 3rem;
+    border-radius: 20px;
+}
+
+.result-summary{
+    text-align: center;
+    margin: 1rem 8em;
+    padding: 1rem;
+    font-size: 2rem;
+    border-bottom: 1px solid #663399;
+}
+
+.page{
+    text-align: center;
+}
+
+.card-container{
+    
+    display: flex;
+    flex-wrap: wrap;
+    margin:0 auto 1rem;
+    justify-content: center;
+}
+
+.card-body{
+    overflow: auto;
+    margin: 0.6rem;
+    padding: 1rem;
+    width: 10rem;
+    height: 13rem;
+    text-align: center;
+    background-color: #f0eeee;
+    border-radius: 5px;
+}
+
+.card-content{
+
+    text-align: center;
+    font-size: 1rem;
+    font-weight: bold;
+}
+

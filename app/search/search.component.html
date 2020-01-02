@@ -1,0 +1,35 @@
+<form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <div class="input-container">
+        <input type="text" placeholder="Search..." formControlName="searchBar" list="artists">
+        <!-- dropdown  link list="artists" with id="artists" in datalist-->
+        <!-- 
+        <datalist id="artists">
+            <option *ngFor="let artist of artistListDropDown" [value]="artist.artistName"></option>
+        </datalist> 
+        -->
+        <datalist id="artists">
+            <option *ngFor="let artist of artistListDropDown" value="{{artist.artistName}}"></option>
+        </datalist>
+    </div>
+</form>
+
+<div class="result-summary" *ngIf="searchKeyWord === ''; else searchSummary">
+    Search Albums by ArtistName:
+</div>
+
+<!-- pagination -->
+<pagination-controls class="page" (pageChange)="p = $event"></pagination-controls>
+
+<ng-template #searchSummary>
+    <div class="result-summary">
+        {{resultCounter}} results for " {{searchKeyWord}} "
+    </div>
+</ng-template>
+
+<div class="card-container">
+    <!-- pagination -->
+    <div class="card-body" *ngFor="let artist of artistList | paginate: { itemsPerPage: 20, currentPage: p }" >
+        <img src="{{artist.artworkUrl100}}">
+        <div class="card-content">{{artist.collectionName}}</div>
+    </div>
+</div>
